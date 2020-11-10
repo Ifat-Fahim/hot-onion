@@ -1,0 +1,26 @@
+.hero {
+    background: url("../../images/bannerbackground.png") no-repeat center center;
+    background-size: cover;
+    height: calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero * {
+    padding: 0 20px;
+}
+
+input[type="text"] {
+    max-width: 400px;
+    border-radius: 20px;
+    width: 320px;
+}
+
+.btn {
+    background-color: hotpink !important;
+    color: #fff !important;
+    border-radius: 20px !important;
+    margin-left: -70px;
+}
