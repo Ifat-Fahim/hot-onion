@@ -1,7 +1,7 @@
 .tab {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     grid-gap: 10px !important;
-    align-content: center !important;
+    justify-items: center !important;
     margin-top: 10px;
 }

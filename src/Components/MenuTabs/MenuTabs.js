@@ -1,9 +1,9 @@
 import React from "react";
 import { Tabs, Tab, Row, Col, Container } from "react-bootstrap";
+import AllFood from "./AllFood";
 import Breakfast from "./Breakfast";
 import Dinner from "./Dinner";
 import Lunch from "./Lunch";
-import "./MenuTabs.css";
 
 const MenuTabs = () => {
     return (
@@ -11,21 +11,20 @@ const MenuTabs = () => {
             <Row>
                 <Col>
                     <Tabs
-                        defaultActiveKey="breakfast"
-                        id="controlled-tab-example"
+                        defaultactiveKey={1}
                         fill
+                        style={{ marginTop: "20px" }}
                     >
-                        <Tab
-                            eventKey="breakfast"
-                            title="Breakfast"
-                            className="tab"
-                        >
+                        <Tab eventKey={1} title="All">
+                            <AllFood />
+                        </Tab>
+                        <Tab eventKey={2} title="Breakfast">
                             <Breakfast />
                         </Tab>
-                        <Tab eventKey="lunch" title="Lunch" className="tab">
+                        <Tab eventKey={3} title="Lunch">
                             <Lunch />
                         </Tab>
-                        <Tab eventKey="dinner" title="Dinner" className="tab">
+                        <Tab eventKey={4} title="Dinner">
                             <Dinner />
                         </Tab>
                     </Tabs>

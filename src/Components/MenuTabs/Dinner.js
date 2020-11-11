@@ -1,17 +1,18 @@
 import React from "react";
 import fakedata from "../../fakedata/fakedata";
 import FoodItem from "./FoodItem";
+import "./MenuTabs.css";
 
 const Dinner = () => {
+    const dinnerItem = fakedata.filter(
+        (dinner) => dinner.categories === "dinner"
+    );
     return (
-        <>
-            {fakedata.map(
-                (data) =>
-                    data.categories === "dinner" && (
-                        <FoodItem key={data.id} {...data} />
-                    )
-            )}
-        </>
+        <div className="tab">
+            {dinnerItem.map((data) => (
+                <FoodItem key={data.id} {...data} />
+            ))}
+        </div>
     );
 };
 

@@ -1,19 +1,16 @@
 import React from "react";
+import "./MenuTabs.css";
 import fakedata from "../../fakedata/fakedata";
 import FoodItem from "./FoodItem";
-import "./MenuTabs.css";
 
-const Breakfast = () => {
-    const breakfastItem = fakedata.filter(
-        (breakfast) => breakfast.categories === "breakfast"
-    );
+const AllFood = () => {
     return (
         <div className="tab">
-            {breakfastItem.map((data) => (
+            {fakedata.map((data) => (
                 <FoodItem key={data.id} {...data} />
             ))}
         </div>
     );
 };
 
-export default Breakfast;
+export default AllFood;

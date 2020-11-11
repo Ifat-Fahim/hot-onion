@@ -7,7 +7,7 @@ const FoodItem = (props) => {
         <Container>
             <Row>
                 <Col>
-                    <Card style={{ width: "18rem", padding: "0 10px" }}>
+                    <Card style={{ padding: "0 10px" }}>
                         <Card.Img variant="top" src={img} />
                         <Card.Body>
                             <Card.Title> {title} </Card.Title>
