@@ -2,18 +2,22 @@ import React from "react";
 import Choose from "./Components/Choose/Choose";
 import Footer from "./Components/Footer/Footer";
 import Hero from "./Components/Hero/Hero";
-import MenuTabs from "./Components/MenuTabs/MenuTabs";
-import Navbar from "./Components/Navbar/Navbar";
-
+import Navigation from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AllFood from "./Components/MenuTabs/AllFood";
 function App() {
     return (
-        <div className="App">
-            <Navbar />
-            <Hero />
-            <MenuTabs />
-            <Choose />
-            <Footer />
-        </div>
+        <Router>
+            <Navigation />
+            <Switch>
+                <Route path="/">
+                    <Hero />
+                    <AllFood />
+                    <Choose />
+                    <Footer />
+                </Route>
+            </Switch>
+        </Router>
     );
 }
 

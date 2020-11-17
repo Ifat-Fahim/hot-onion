@@ -2,6 +2,12 @@ import React from "react";
 import "./Hero.css";
 
 const Hero = () => {
+    const btnStyle = {
+        backgroundColor: "hotpink",
+        color: "#fff ",
+        borderRadius: "20px",
+        marginLeft: "-70px",
+    };
     return (
         <div className="hero">
             <h1 className="mb-3 text-center">
@@ -13,7 +19,12 @@ const Hero = () => {
                     placeholder="Search Food Here"
                     className="form-control mx-auto"
                 />
-                <input type="submit" value="Search" className="btn" />
+                <input
+                    type="submit"
+                    className="btn"
+                    value="Search"
+                    style={btnStyle}
+                />
             </form>
         </div>
     );

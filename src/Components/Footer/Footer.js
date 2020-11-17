@@ -21,7 +21,7 @@ const Footer = () => {
                             </ul>
                             <ul>
                                 <li>Get help</li>
-                                <li>faq</li>
+                                <li>FAQs</li>
                                 <li>Cities</li>
                                 <li>Services</li>
                             </ul>

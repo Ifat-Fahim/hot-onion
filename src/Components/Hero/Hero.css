@@ -17,10 +17,3 @@ input[type="text"] {
     border-radius: 20px;
     width: 320px;
 }
-
-.btn {
-    background-color: hotpink !important;
-    color: #fff !important;
-    border-radius: 20px !important;
-    margin-left: -70px;
-}

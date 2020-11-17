@@ -2,42 +2,19 @@
     height: 40px;
 }
 
-nav {
-    background: #eff2ef;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+.nav-bar {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    flex: 4;
-}
-
-.logo {
-    flex: 1;
-}
-
-a {
+.link {
     display: inline-block;
-    text-decoration: none !important;
-    color: #484a47 !important;
-    padding: 10px 20px;
-    transition: all 0.5s ease;
+    color: #000;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: all 500ms ease-in-out;
 }
 
-a:hover {
-    color: #e36397 !important;
-}
-
-@media (min-width: 600px) {
-    ul {
-        flex: 1;
-    }
-
-    .logo {
-        flex: 3;
-    }
+.link:hover {
+    color: #ff69b4;
+    text-decoration: none;
 }

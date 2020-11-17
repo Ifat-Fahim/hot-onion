@@ -1,7 +1,38 @@
-.tab {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    grid-gap: 10px !important;
-    justify-items: center !important;
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 10px;
+}
+
+.menu > * {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.category button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0.8em 1.5em;
+    margin-right: 10px;
     margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 400ms ease-in-out;
+}
+
+.category button:hover {
+    background: #ff69b4;
+    color: #fff;
+}
+
+.category button:focus {
+    background: #ff69b4;
+    color: #fff;
 }

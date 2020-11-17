@@ -7,8 +7,18 @@
 
 .ul-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 10px;
+}
+
+.ul-container > ul {
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 @media (min-width: 576px) {
@@ -35,5 +45,11 @@
         display: flex;
         justify-content: space-between;
         flex: 2;
+    }
+}
+
+@media (min-width: 320px) {
+    .ul-container {
+        justify-content: flex-start;
     }
 }

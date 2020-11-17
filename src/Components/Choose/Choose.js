@@ -21,7 +21,7 @@ const Choose = () => {
             </p>
             <div style={cardStyle}>
                 {chooseData.map((choose) => (
-                    <ChooseCards key={chooseData.id} {...choose} />
+                    <ChooseCards key={choose.id} {...choose} />
                 ))}
             </div>
         </Container>

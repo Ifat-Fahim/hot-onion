@@ -1,22 +1,32 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import React from 'react';
-import logo from '../../images/logo2.png';
-import './Navbar.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import logo from "../../images/logo2.png";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
-const Navbar = () => {
+const Navigation = () => {
     return (
-        <nav className="d-flex justify-content-between align-items-center">
-            <div className="logo">
-                <img src={logo} alt="hot onion"/>
-            </div>
-            <ul className="d-flex justify-content-around align-items-center">
-                <li><a href="/cart"> <FontAwesomeIcon icon={faShoppingCart} /> </a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/sign-up">Sign Up</a></li>
-            </ul>
-        </nav>
+        <Navbar className="nav-bar" fixed="top">
+            <Navbar.Brand>
+                <Link className="link" className="logo" to="/">
+                    <img src={logo} alt="Red Onion" />
+                </Link>
+            </Navbar.Brand>
+            <Nav className="ml-auto">
+                <Link className="link" to="/cart">
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                </Link>
+                <Link className="link" to="/login">
+                    Login
+                </Link>
+                <Link className="link" to="/sign-up">
+                    Sign Up
+                </Link>
+            </Nav>
+        </Navbar>
     );
 };
 
-export default Navbar;
+export default Navigation;
