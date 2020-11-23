@@ -6,7 +6,7 @@ const Category = ({ categories, filterCategory }) => {
         <div className="category">
             {categories.map((category, index) => (
                 <button key={index} onClick={() => filterCategory(category)}>
-                    {category.toUpperCase()}
+                    {category}
                 </button>
             ))}
         </div>

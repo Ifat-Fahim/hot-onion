@@ -5,19 +5,26 @@ import Hero from "./Components/Hero/Hero";
 import Navigation from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllFood from "./Components/MenuTabs/AllFood";
+import FoodDetail from "./Components/FoodDetail/FoodDetail";
+import CartContextProvider from "./Contexts/CartContext";
 function App() {
     return (
-        <Router>
-            <Navigation />
-            <Switch>
-                <Route path="/">
-                    <Hero />
-                    <AllFood />
-                    <Choose />
-                    <Footer />
-                </Route>
-            </Switch>
-        </Router>
+        <CartContextProvider>
+            <Router>
+                <Navigation />
+                <Switch>
+                    <Route path="/food-detail/:foodId">
+                        <FoodDetail />
+                    </Route>
+                    <Route path="/">
+                        <Hero />
+                        <AllFood />
+                        <Choose />
+                        <Footer />
+                    </Route>
+                </Switch>
+            </Router>
+        </CartContextProvider>
     );
 }
 

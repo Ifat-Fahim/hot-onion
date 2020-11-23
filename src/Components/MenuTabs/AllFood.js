@@ -9,7 +9,6 @@ const AllFood = () => {
         "all",
         ...new Set(fakedata.map((data) => data.categories)),
     ];
-    console.log(allCategories);
     const [menu, setMenu] = useState(fakedata);
     const [categories, setCategories] = useState(allCategories);
     const filterCategory = (category) => {
