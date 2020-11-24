@@ -6,13 +6,19 @@
     display: block; */
 }
 
+.container span {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .quit {
     background: rgb(207, 11, 11);
     color: #fff;
-    display: inline-block;
-    padding: 18px 24px;
     border-radius: 50%;
-    z-index: -1;
+    padding: 8px 30px;
+    font-size: 51px;
+    font-weight: bold;
 }
 
 h2,

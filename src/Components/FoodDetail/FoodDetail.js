@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
-import React, { useContext, useState } from "react";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import React, { useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import fakedata from "../../fakedata/fakedata";
 import "./FoodDetail.css";
@@ -16,12 +16,15 @@ const FoodDetail = () => {
     const { addToCart, quantity, setQuantity } = useContext(CartContext);
 
     return (
-        <div className="container" style={{ marginTop: "80px" }}>
+        <div
+            className="container"
+            style={{ marginTop: "80px", paddingBottom: "20px" }}
+        >
+            <span onClick={() => history.push("/")}>
+                <span className="quit">&times;</span>
+            </span>
             <div className="img">
                 <img src={img} alt="" />
-                <span className="quit" onClick={() => history.push("/")}>
-                    <FontAwesomeIcon icon={faTimes} />
-                </span>
             </div>
             <div>
                 <h2> {title} </h2>
@@ -41,8 +44,11 @@ const FoodDetail = () => {
                     </button>
                 </div>
                 <button
-                    className="add-to-cart"
+                    className={`add-to-cart ${
+                        quantity === 0 ? "disabled" : ""
+                    }`}
                     onClick={() => addToCart(id, quantity)}
+                    disabled={quantity === 0 ? true : false}
                 >
                     Add To Cart
                 </button>

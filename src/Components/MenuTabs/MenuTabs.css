@@ -29,11 +29,11 @@
 }
 
 .category button:hover {
-    background: #ff69b4;
+    background: #cf0b0b;
     color: #fff;
 }
 
 .category button:focus {
-    background: #ff69b4;
+    background: #cf0b0b;
     color: #fff;
 }

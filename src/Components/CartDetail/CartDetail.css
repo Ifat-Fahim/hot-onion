@@ -1,0 +1,35 @@
+.cart-detail-container {
+    margin-top: 100px;
+}
+
+.cart-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-container img {
+    width: 100px;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity {
+    background: #fff;
+    border-radius: 5px;
+}
+
+@media (min-width: 576px) {
+    .cart-btn-group {
+        display: flex;
+        align-items: center;
+    }
+    .quantity {
+        margin: 0 10px;
+    }
+}
