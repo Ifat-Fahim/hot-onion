@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero = () => {
     const btnStyle = {
-        backgroundColor: "hotpink",
+        backgroundColor: "#f91944",
         color: "#fff ",
         borderRadius: "20px",
         marginLeft: "-70px",
@@ -17,7 +17,7 @@ const Hero = () => {
                 <input
                     type="text"
                     placeholder="Search Food Here"
-                    className="form-control mx-auto"
+                    className="form-control mx-auto input-text"
                 />
                 <input
                     type="submit"

@@ -29,9 +29,55 @@ const CartContextProvider = ({ children }) => {
         }
     };
 
+    // Increase quantity in cart
+    const increaseQuantity = (id) => {
+        const item = cart.find(
+            (cartItem) => Number(cartItem.id) === Number(id)
+        );
+        item.quantity += 1;
+        item.totalPrice = (item.price * item.quantity).toFixed(2);
+        setCart([...cart]);
+    };
+
+    //Decrease quantity in cart
+    const decreaseQuantity = (id) => {
+        const item = cart.find(
+            (cartItem) => Number(cartItem.id) === Number(id)
+        );
+        if (item.quantity >= 1) {
+            item.quantity -= 1;
+        }
+        if (item.quantity === 0) {
+            const filteredCart = cart.filter(
+                (item) => Number(item.id) !== Number(id)
+            );
+            setCart([...filteredCart]);
+            return;
+        }
+        item.totalPrice = (item.price * item.quantity).toFixed(2);
+        setCart([...cart]);
+    };
+
+    //Remove a item
+
+    const removeItem = (id) => {
+        const removedItem = cart.filter(
+            (item) => Number(item.id) !== Number(id)
+        );
+        setCart([...removedItem]);
+    };
+
     return (
         <CartContext.Provider
-            value={{ cart, addToCart, quantity, setQuantity }}
+            value={{
+                cart,
+                addToCart,
+                quantity,
+                setQuantity,
+                increaseQuantity,
+                decreaseQuantity,
+                removeItem,
+            }}
         >
             {children}
         </CartContext.Provider>

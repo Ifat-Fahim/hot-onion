@@ -7,7 +7,7 @@ const Menu = ({ title, img, price, subtitle, id }) => {
     return (
         <Container>
             <Card
-                style={{ padding: "15px" }}
+                style={{ padding: "15px", cursor: "pointer" }}
                 onClick={() => history.push(`/food-detail/${id}`)}
             >
                 <Card.Img variant="top" src={img} />

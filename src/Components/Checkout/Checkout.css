@@ -1,0 +1,9 @@
+.checkout-container {
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+    .checkout-container {
+        display: flex;
+    }
+}
