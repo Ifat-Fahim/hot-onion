@@ -13,6 +13,7 @@ const FoodDetail = () => {
         (data) => Number(data.id) === Number(foodId)
     );
     const { img, title, description, price, id } = selectedFood;
+    console.log(selectedFood);
     const { addToCart, quantity, setQuantity } = useContext(CartContext);
 
     return (
@@ -24,7 +25,7 @@ const FoodDetail = () => {
                 <span className="quit">&times;</span>
             </span>
             <div className="img">
-                <img src={img} alt="" />
+                <img src={process.env.PUBLIC_URL + `/${img}`} alt="" />
             </div>
             <div>
                 <h2> {title} </h2>
