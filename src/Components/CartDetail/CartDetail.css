@@ -21,6 +21,18 @@
     border-radius: 5px;
 }
 
+.checkout-btn {
+    background: #f91944 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.disable-checkout {
+    background: gray !important;
+    color: #000 !important;
+    cursor: not-allowed;
+}
+
 @media (min-width: 576px) {
     .cart-btn-group {
         display: flex;

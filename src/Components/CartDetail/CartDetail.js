@@ -1,15 +1,19 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Contexts/CartContext";
 import "./CartDetail.css";
 
 const CartDetail = () => {
-    const { cart, increaseQuantity, decreaseQuantity, removeItem } = useContext(
-        CartContext
-    );
+    const {
+        cart,
+        increaseQuantity,
+        decreaseQuantity,
+        removeItem,
+        hasCheckout,
+    } = useContext(CartContext);
 
     const totalBill = cart
         .reduce((total, item) => total + Number(item.totalPrice), 0)
@@ -106,6 +110,14 @@ const CartDetail = () => {
                         <Card.Text>
                             <h5>Grand Total: ${grandTotal} </h5>
                         </Card.Text>
+                        <Button
+                            className={`btn btn-block checkout-btn ${
+                                !hasCheckout ? "disable-checkout" : ""
+                            }`}
+                            disabled={!hasCheckout ? "disabled" : ""}
+                        >
+                            Checkout
+                        </Button>
                     </Card.Body>
                 </Card>
             )}
