@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
-import logo from "../../images/logo2.png";
+import logo from "../../backgroundImg/logo2.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";

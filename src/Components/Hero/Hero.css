@@ -1,5 +1,6 @@
 .hero {
-    background: url("../../images/bannerbackground.png") no-repeat center center;
+    background: url("../../backgroundImg/bannerbackground.png") no-repeat center
+        center;
     background-size: cover;
     height: calc(100vh - 40px);
     display: flex;

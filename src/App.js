@@ -7,8 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllFood from "./Components/MenuTabs/AllFood";
 import FoodDetail from "./Components/FoodDetail/FoodDetail";
 import CartContextProvider from "./Contexts/CartContext";
-import CartDetail from "./Components/CartDetail/CartDetail";
-import CheckoutForm from "./Components/CheckoutForm/CheckoutForm";
 import Checkout from "./Components/Checkout/Checkout";
 function App() {
     return (

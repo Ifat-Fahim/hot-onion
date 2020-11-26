@@ -31,7 +31,7 @@ const CartDetail = () => {
         <div className="container cart-detail-container">
             {cart.length > 0 ? (
                 <div style={{ textAlign: "center" }}>
-                    <h4>From Alishan Restaurant Sherpur</h4>
+                    <h4>From ABC Restaurant Sherpur</h4>
                     <h5>Arriving in 20-30 minutes</h5>
                 </div>
             ) : (
@@ -96,7 +96,7 @@ const CartDetail = () => {
                 <Card style={{ width: "18rem", marginBottom: "50px" }}>
                     <Card.Body>
                         <Card.Title>
-                            <h2>Order Details</h2>
+                            <h2>Payment Details</h2>
                         </Card.Title>
                         <Card.Text>Total: ${totalBill}</Card.Text>
                         <Card.Text>
