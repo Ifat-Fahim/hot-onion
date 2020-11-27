@@ -8,6 +8,7 @@ import AllFood from "./Components/MenuTabs/AllFood";
 import FoodDetail from "./Components/FoodDetail/FoodDetail";
 import CartContextProvider from "./Contexts/CartContext";
 import Checkout from "./Components/Checkout/Checkout";
+import OrderComplete from "./Components/OrderComplete/OrderComplete";
 function App() {
     return (
         <CartContextProvider>
@@ -19,6 +20,9 @@ function App() {
                     </Route>
                     <Route path="/cart">
                         <Checkout />
+                    </Route>
+                    <Route path="/order-complete">
+                        <OrderComplete />
                     </Route>
                     <Route exact path="/">
                         <Hero />

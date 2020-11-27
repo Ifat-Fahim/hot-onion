@@ -7,6 +7,12 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
     const [hasCheckout, setHasCheckout] = useState(false);
+    const [formInfo, setFormInfo] = useState({
+        name: "",
+        address: "",
+        phone: "",
+        desc: "",
+    });
 
     const addToCart = (id, quantity) => {
         const selectedItem = allFood.find(
@@ -72,6 +78,7 @@ const CartContextProvider = ({ children }) => {
         <CartContext.Provider
             value={{
                 cart,
+                setCart,
                 addToCart,
                 quantity,
                 setQuantity,
@@ -80,6 +87,8 @@ const CartContextProvider = ({ children }) => {
                 removeItem,
                 hasCheckout,
                 setHasCheckout,
+                formInfo,
+                setFormInfo,
             }}
         >
             {children}

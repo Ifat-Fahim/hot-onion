@@ -4,13 +4,8 @@ import { CartContext } from "../../Contexts/CartContext";
 import "./CheckoutForm.css";
 
 const CheckoutForm = () => {
-    const { setHasCheckout } = useContext(CartContext);
-    const [formInfo, setFormInfo] = useState({
-        name: "",
-        address: "",
-        phone: "",
-        desc: "",
-    });
+    const { setHasCheckout, formInfo, setFormInfo } = useContext(CartContext);
+
     const handleCheckout = (e) => {
         e.preventDefault();
         setHasCheckout(true);

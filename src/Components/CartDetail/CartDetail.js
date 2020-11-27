@@ -2,13 +2,15 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CartContext } from "../../Contexts/CartContext";
 import "./CartDetail.css";
 
 const CartDetail = () => {
+    const history = useHistory();
     const {
         cart,
+        setCart,
         increaseQuantity,
         decreaseQuantity,
         removeItem,
@@ -30,6 +32,11 @@ const CartDetail = () => {
         Number(deliveryCharge) +
         Number(tax)
     ).toFixed(2);
+
+    const completeOrder = () => {
+        history.push("/order-complete");
+        setCart([]);
+    };
 
     return (
         <div className="container cart-detail-container">
@@ -111,6 +118,7 @@ const CartDetail = () => {
                             <h5>Grand Total: ${grandTotal} </h5>
                         </Card.Text>
                         <Button
+                            onClick={completeOrder}
                             className={`btn btn-block checkout-btn ${
                                 !hasCheckout ? "disable-checkout" : ""
                             }`}
