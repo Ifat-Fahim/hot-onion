@@ -6,9 +6,11 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { CartContext } from "../../Contexts/CartContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 const Navigation = () => {
     const { cart } = useContext(CartContext);
+    const { user, handleSignOut } = useContext(AuthContext);
     return (
         <Navbar className="nav-bar" fixed="top">
             <Navbar.Brand>
@@ -21,9 +23,22 @@ const Navigation = () => {
                     <FontAwesomeIcon icon={faShoppingCart} />
                     <span> {cart.length} </span>
                 </Link>
-                <Link className="link" to="/login">
-                    Login
-                </Link>
+                <div>
+                    {user.isSignedIn ? (
+                        <span
+                            style={{ cursor: "pointer" }}
+                            onClick={handleSignOut}
+                        >
+                            Log out
+                        </span>
+                    ) : (
+                        <Link className="link" to="/login">
+                            Login
+                        </Link>
+                    )}
+                    <br />
+                    {user.isSignedIn ? <span>{user.name}</span> : ""}
+                </div>
                 <Link className="link" to="/sign-up">
                     Sign Up
                 </Link>

@@ -9,30 +9,42 @@ import FoodDetail from "./Components/FoodDetail/FoodDetail";
 import CartContextProvider from "./Contexts/CartContext";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderComplete from "./Components/OrderComplete/OrderComplete";
+import AuthContextProvider from "./Contexts/AuthContext";
+import Login from "./Components/Auth/Login";
+import SignUp from "./Components/Auth/SignUp";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 function App() {
     return (
-        <CartContextProvider>
-            <Router>
-                <Navigation />
-                <Switch>
-                    <Route path="/food-detail/:foodId">
-                        <FoodDetail />
-                    </Route>
-                    <Route path="/cart">
-                        <Checkout />
-                    </Route>
-                    <Route path="/order-complete">
-                        <OrderComplete />
-                    </Route>
-                    <Route exact path="/">
-                        <Hero />
-                        <AllFood />
-                        <Choose />
-                        <Footer />
-                    </Route>
-                </Switch>
-            </Router>
-        </CartContextProvider>
+        <AuthContextProvider>
+            <CartContextProvider>
+                <Router>
+                    <Navigation />
+                    <Switch>
+                        <Route path="/food-detail/:foodId">
+                            <FoodDetail />
+                        </Route>
+                        <PrivateRoute path="/cart">
+                            <Checkout />
+                        </PrivateRoute>
+                        <Route path="/order-complete">
+                            <OrderComplete />
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/sign-up">
+                            <SignUp />
+                        </Route>
+                        <Route exact path="/">
+                            <Hero />
+                            <AllFood />
+                            <Choose />
+                            <Footer />
+                        </Route>
+                    </Switch>
+                </Router>
+            </CartContextProvider>
+        </AuthContextProvider>
     );
 }
 
